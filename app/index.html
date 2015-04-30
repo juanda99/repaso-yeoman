@@ -19,7 +19,22 @@
 </head>
 
 <body>
-    <p>Hello</p>
+    <table id="listado">
+        <thead>
+            <tr>
+                <td>id</td>
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td>Posición</td>
+                <td>Equipo</td>
+                <td>Dorsal</td>
+                <td>Desc</td>
+                <td>Imagen</td>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
     <button id="enviar">Recibir jugadores</button>
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -43,28 +58,6 @@
     <!-- build:js({app,.tmp}) scripts/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
-    <script>
-    $.ajax({
-            url: 'http://www.media.formandome.es/phonegap/tutorial/futbolistas.php',
-            dataType: 'json'
-        })
-        .done(function(futbolistas) {
-            console.log("success");
-
-            //$.each(array/object, function(index, val) {
-            /* iterate through array or object */
-            //});
-            $.each(futbolistas, function(index, futbolista) {
-                console.log(futbolista.nombre);
-            });
-        })
-        .fail(function() {
-            console.log("error");
-        })
-        .always(function() {
-            console.log("complete");
-        });
-    </script>
 </body>
 
 </html>
