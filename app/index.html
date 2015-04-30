@@ -19,30 +19,8 @@
 </head>
 
 <body>
-<p>HOla</p>
+    <p>Hello</p>
     <button id="enviar">Recibir jugadores</button>
-    <script>
-    $.ajax({
-            url: 'http://www.media.formandome.es/phonegap/tutorial/futbolistas.php',
-            dataType: 'json'
-        })
-        .done(function(futbolistas) {
-            console.log("success");
-
-            //$.each(array/object, function(index, val) {
-            /* iterate through array or object */
-            //});
-            $.each(futbolistas, function(index, futbolista) {
-                console.log(futbolista.nombre);
-            });
-        })
-        .fail(function() {
-            console.log("error");
-        })
-        .always(function() {
-            console.log("complete");
-        });
-    </script>
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -65,6 +43,28 @@
     <!-- build:js({app,.tmp}) scripts/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
+    <script>
+    $.ajax({
+            url: 'http://www.media.formandome.es/phonegap/tutorial/futbolistas.php',
+            dataType: 'json'
+        })
+        .done(function(futbolistas) {
+            console.log("success");
+
+            //$.each(array/object, function(index, val) {
+            /* iterate through array or object */
+            //});
+            $.each(futbolistas, function(index, futbolista) {
+                console.log(futbolista.nombre);
+            });
+        })
+        .fail(function() {
+            console.log("error");
+        })
+        .always(function() {
+            console.log("complete");
+        });
+    </script>
 </body>
 
 </html>
